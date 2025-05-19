@@ -1,0 +1,46 @@
+body {
+    background: #000000;
+    color: #ffffff;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+  }
+  h1 {
+    font-size: 2.5em;
+    color: #ffffff;
+    margin-bottom: 20px;
+  }
+  
+  p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    color: #f0f0f0;
+  }
+  
+  a {
+    color: #ff0077;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  nav a {
+    margin-right: 10px;
+  }
+  
+  img {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+  }
+  
+  img:hover {
+    transform: scale(1.1);
+  }
+  
+  img.circular {
+    border-radius: 50%;
+    object-fit: cover;
+    width: 200px;
+    height: 200px;
+  }

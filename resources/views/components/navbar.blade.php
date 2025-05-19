@@ -1,21 +1,32 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-danger px-4">
     <div class="container-fluid">
-        <a class="navbar-brand" href="{{ route('inicio') }}">SEXMEX</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <a class="navbar-brand fw-bold text-danger" href="{{ route('home') }}">Vistas</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav ms-3">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('inicio') }}">Inicio</a>
+                    <a class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}"
+                        href="{{ route('home') }}">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('listado') }}">Listado</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('agregar') }}">Agregar</a>
+                    <a class="nav-link {{ request()->routeIs('list') ? 'active' : '' }}"
+                        href="{{ route('list') }}">Listado de películas</a>
                 </li>
             </ul>
         </div>
+        @auth
+        <div class="d-flex">
+            <form method="POST" action="{{ route('logout') }}">
+                @csrf
+                <button type="submit" class="btn btn-outline-danger">
+                    <i class="bi bi-box-arrow-right"></i> cerrar sesión
+                </button>
+            </form>
+        </div>
+        @endauth
+
     </div>
 </nav>

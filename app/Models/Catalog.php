@@ -5,19 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Pelicula extends Model
+class Catalog extends Model
 {
     use HasFactory;
+    public $timestamps=false;
+    protected $primarykey="id";
+    protected $table ="catalogo";
 
-    // Nombre de la tabla (opcional si el nombre coincide con el plural del modelo)
-    protected $table = 'peliculas';
-
-    // Campos que se pueden asignar masivamente
+    // Campos que se pueden asignar en masa
     protected $fillable = [
         'titulo',
         'descripcion',
         'genero',
         'director',
-        'fecha_de_estreno',
+        'fecha_estreno'
     ];
 }
